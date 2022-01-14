@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -28,6 +28,10 @@ requirements:
 test:
   imports:
     - django_heroku
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/heroku/django-heroku
@@ -40,5 +44,3 @@ about:
 extra:
   recipe-maintainers:
     - mxr-conda
-    - rluria14
-    - oblute

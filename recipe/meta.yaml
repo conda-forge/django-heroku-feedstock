@@ -17,12 +17,12 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
     - dj-database-url >=0.5.0
     - django
     - psycopg2
-    - python
+    - python >=3.6
     - whitenoise
 
 test:

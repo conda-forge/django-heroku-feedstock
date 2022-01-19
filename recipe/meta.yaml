@@ -11,23 +11,27 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
     - dj-database-url >=0.5.0
     - django
     - psycopg2
-    - python
+    - python >=3.6
     - whitenoise
 
 test:
   imports:
     - django_heroku
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/heroku/django-heroku
@@ -40,5 +44,3 @@ about:
 extra:
   recipe-maintainers:
     - mxr-conda
-    - rluria14
-    - oblute
